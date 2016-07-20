@@ -55,7 +55,9 @@
 				EC9C39E61CF5A5910090F133 /* ReactiveAppKit */,
 				EC9C39E51CF5A5910090F133 /* Products */,
 			);
+			indentWidth = 2;
 			sourceTree = "<group>";
+			tabWidth = 2;
 		};
 		EC9C39E51CF5A5910090F133 /* Products */ = {
 			isa = PBXGroup;
