@@ -30,6 +30,7 @@ extension NSImageView {
   public var rImage: Property<NSImage?> {
     return rAssociatedPropertyForValueForKey("image")
   }
+  
 }
 
 extension NSImageView: BindableType {
@@ -37,4 +38,5 @@ extension NSImageView: BindableType {
   public func observer(disconnectDisposable: Disposable) -> (StreamEvent<NSImage?> -> ()) {
     return self.rImage.observer(disconnectDisposable)
   }
+
 }

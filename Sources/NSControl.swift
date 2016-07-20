@@ -25,8 +25,8 @@
 import ReactiveKit
 import Cocoa
 
-@objc class RKNSControlHelper: NSObject
-{
+@objc class RKNSControlHelper: NSObject {
+
   weak var control: NSControl?
   let pushStream = PushStream<AnyObject?>()
   
@@ -47,6 +47,7 @@ import Cocoa
     control?.action = nil
     pushStream.completed()
   }
+
 }
 
 extension NSControl {
@@ -92,4 +93,5 @@ extension NSControl {
   public var rDoubleValue: Property<Double> {
     return rAssociatedPropertyForValueForKey("doubleValue")
   }
+  
 }

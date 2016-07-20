@@ -22,12 +22,11 @@
 //  THE SOFTWARE.
 //
 
-
 import ReactiveKit
 import Cocoa
 
 extension NSTextField {
-  
+
   public var rFont: Property<NSFont?> {
     return rAssociatedPropertyForValueForKey("font")
   }
@@ -55,4 +54,5 @@ extension NSTextField {
   public func observer(disconnectDisposable: Disposable) -> (StreamEvent<String> -> ()) {
     return self.rStringleValue.observer(disconnectDisposable)
   }
+  
 }

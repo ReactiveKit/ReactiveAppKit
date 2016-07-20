@@ -30,6 +30,7 @@ extension NSProgressIndicator {
   public var rProgress: Property<Float> {
     return rAssociatedPropertyForValueForKey("progress")
   }
+
 }
 
 extension NSProgressIndicator: BindableType {
@@ -37,4 +38,5 @@ extension NSProgressIndicator: BindableType {
   public func observer(disconnectDisposable: Disposable) -> (StreamEvent<Float> -> ()) {
     return self.rProgress.observer(disconnectDisposable)
   }
+
 }
