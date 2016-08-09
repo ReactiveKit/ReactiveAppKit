@@ -28,10 +28,10 @@ import Cocoa
 extension NSView {
   
   public var rAlphaValue: Property<CGFloat> {
-    return rAssociatedPropertyForValueForKey("alphaValue")
+    return rAssociatedPropertyForValueFor(key: "alphaValue")
   }
 
   public var rHidden: Property<Bool> {
-    return rAssociatedPropertyForValueForKey("hidden")
+    return rAssociatedPropertyForValueFor(key: "hidden")
   }
 }

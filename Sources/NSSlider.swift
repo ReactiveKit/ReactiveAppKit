@@ -28,26 +28,26 @@ import Cocoa
 extension NSSlider {
 
   public var rMinValue: Property<Double> {
-    return rAssociatedPropertyForValueForKey("minValue")
+    return rAssociatedPropertyForValueFor(key: "minValue")
   }
 
   public var rMaxValue: Property<Double> {
-    return rAssociatedPropertyForValueForKey("maxValue")
+    return rAssociatedPropertyForValueFor(key: "maxValue")
   }
 
   public var rAltIncrementValue: Property<Double> {
-    return rAssociatedPropertyForValueForKey("altIncrementValue")
+    return rAssociatedPropertyForValueFor(key: "altIncrementValue")
   }
 
   public var rKnobThickness: Property<CGFloat> {
-    return rAssociatedPropertyForValueForKey("knobThickness")
+    return rAssociatedPropertyForValueFor(key: "knobThickness")
   }
 
 }
 
 extension NSSlider {
 
-  public func observer(disconnectDisposable: Disposable) -> (StreamEvent<Double> -> ()) {
-    return self.rDoubleValue.observer(disconnectDisposable)
+  public func observer(disconnectDisposable: Disposable) -> ((StreamEvent<Double>) -> ()) {
+    return self.rDoubleValue.observer(disconnectDisposable: disconnectDisposable)
   }
 }

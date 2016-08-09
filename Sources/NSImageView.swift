@@ -28,13 +28,13 @@ import Cocoa
 extension NSImageView {
   
   public var rImage: Property<NSImage?> {
-    return rAssociatedPropertyForValueForKey("image")
+    return rAssociatedPropertyForValueFor(key: "image")
   }
 }
 
 extension NSImageView: BindableType {
 
-  public func observer(disconnectDisposable: Disposable) -> (StreamEvent<NSImage?> -> ()) {
-    return self.rImage.observer(disconnectDisposable)
+  public func observer(disconnectDisposable: Disposable) -> ((StreamEvent<NSImage?>) -> ()) {
+    return self.rImage.observer(disconnectDisposable: disconnectDisposable)
   }
 }

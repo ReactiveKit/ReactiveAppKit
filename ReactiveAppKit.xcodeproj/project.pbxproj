@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9086A8721D59C044003643E8 /* ReactiveKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9086A8711D59C044003643E8 /* ReactiveKit.framework */; };
 		EC9C39E81CF5A5910090F133 /* ReactiveAppKit.h in Headers */ = {isa = PBXBuildFile; fileRef = EC9C39E71CF5A5910090F133 /* ReactiveAppKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EC9C39F81CF5A6BA0090F133 /* NSButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9C39EF1CF5A6BA0090F133 /* NSButton.swift */; };
 		EC9C39F91CF5A6BA0090F133 /* NSControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9C39F01CF5A6BA0090F133 /* NSControl.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9086A8711D59C044003643E8 /* ReactiveKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveKit.framework; path = ../ReactiveKit/build/Debug/ReactiveKit.framework; sourceTree = "<group>"; };
 		EC9C39E41CF5A5910090F133 /* ReactiveAppKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ReactiveAppKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC9C39E71CF5A5910090F133 /* ReactiveAppKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReactiveAppKit.h; sourceTree = "<group>"; };
 		EC9C39E91CF5A5910090F133 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -41,12 +43,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9086A8721D59C044003643E8 /* ReactiveKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9086A8701D59C044003643E8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9086A8711D59C044003643E8 /* ReactiveKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		EC9C39DA1CF5A5910090F133 = {
 			isa = PBXGroup;
 			children = (
@@ -54,8 +65,11 @@
 				EC9C3A041CF5AA1A0090F133 /* ReactiveAppKit.podspec */,
 				EC9C39E61CF5A5910090F133 /* ReactiveAppKit */,
 				EC9C39E51CF5A5910090F133 /* Products */,
+				9086A8701D59C044003643E8 /* Frameworks */,
 			);
+			indentWidth = 2;
 			sourceTree = "<group>";
+			tabWidth = 2;
 		};
 		EC9C39E51CF5A5910090F133 /* Products */ = {
 			isa = PBXGroup;
@@ -126,6 +140,7 @@
 				TargetAttributes = {
 					EC9C39E31CF5A5910090F133 = {
 						CreatedOnToolsVersion = 7.3;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -181,8 +196,6 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
@@ -200,7 +213,6 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -219,6 +231,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -229,8 +242,6 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
@@ -248,7 +259,6 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
@@ -259,6 +269,8 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -267,7 +279,6 @@
 		EC9C39ED1CF5A5910090F133 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -280,14 +291,12 @@
 				PRODUCT_BUNDLE_IDENTIFIER = ReactiveKit.ReactiveAppKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		EC9C39EE1CF5A5910090F133 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;

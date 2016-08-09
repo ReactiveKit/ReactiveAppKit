@@ -29,30 +29,30 @@ import Cocoa
 extension NSTextField {
   
   public var rFont: Property<NSFont?> {
-    return rAssociatedPropertyForValueForKey("font")
+    return rAssociatedPropertyForValueFor(key: "font")
   }
 
   public var rTextColor: Property<NSColor?> {
-    return rAssociatedPropertyForValueForKey("textColor")
+    return rAssociatedPropertyForValueFor(key: "textColor")
   }
 
   public var rBackgroundColor: Property<NSColor?> {
-    return rAssociatedPropertyForValueForKey("backgroundColor")
+    return rAssociatedPropertyForValueFor(key: "backgroundColor")
   }
 
   public var rPlaceholderString: Property<String?> {
-    return rAssociatedPropertyForValueForKey("placeholderString")
+    return rAssociatedPropertyForValueFor(key: "placeholderString")
   }
 
   public var rPlaceholderAttributedString: Property<NSAttributedString?> {
-    return rAssociatedPropertyForValueForKey("placeholderAttributedString")
+    return rAssociatedPropertyForValueFor(key: "placeholderAttributedString")
   }
 
 }
 
 extension NSTextField {
 
-  public func observer(disconnectDisposable: Disposable) -> (StreamEvent<String> -> ()) {
-    return self.rStringleValue.observer(disconnectDisposable)
+  public func observer(disconnectDisposable: Disposable) -> ((StreamEvent<String>) -> ()) {
+    return self.rStringleValue.observer(disconnectDisposable: disconnectDisposable)
   }
 }
