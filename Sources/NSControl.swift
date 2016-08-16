@@ -39,7 +39,7 @@ import Cocoa
   }
 
   func eventHandler(_ sender: NSControl?) {
-    pushStream.next(sender!.objectValue)
+    pushStream.next(sender!.objectValue as AnyObject?)
   }
 
   deinit {
@@ -56,7 +56,7 @@ extension NSControl {
   }
 
   public var rControlEvent: ReactiveKit.Stream<AnyObject?> {
-    if let controlHelper: AnyObject = objc_getAssociatedObject(self, &AssociatedKeys.ControlHelperKey) {
+    if let controlHelper = objc_getAssociatedObject(self, &AssociatedKeys.ControlHelperKey) as AnyObject? {
       return (controlHelper as! RKNSControlHelper).pushStream.toStream()
     } else {
       let controlHelper = RKNSControlHelper(control: self)
