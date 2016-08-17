@@ -29,17 +29,17 @@ import Cocoa
 extension NSSegmentedControl {
   
   public var rSegmentCount: Property<Int> {
-    return rAssociatedPropertyForValueForKey("segmentCount")
+    return rAssociatedPropertyForValueFor(key: "segmentCount")
   }
   
   public var rSelectedSegment: Property<Int> {
-    return rAssociatedPropertyForValueForKey("selectedSegment")
+    return rAssociatedPropertyForValueFor(key: "selectedSegment")
   }
 }
 
 extension NSSegmentedControl {
 
-  public func observer(disconnectDisposable: Disposable) -> (StreamEvent<Int> -> ()) {
-    return self.rSelectedSegment.observer(disconnectDisposable)
+  public func observer(disconnectDisposable: Disposable) -> ((StreamEvent<Int>) -> ()) {
+    return self.rSelectedSegment.observer(disconnectDisposable: disconnectDisposable)
   }
 }

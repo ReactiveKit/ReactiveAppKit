@@ -28,18 +28,18 @@ import Cocoa
 extension NSButton {
   
   public var rTitle: Property<String> {
-    return rAssociatedPropertyForValueForKey("title", initial: self.title) { [weak self] title in
+    return rAssociatedPropertyForValueFor(key: "title", initial: self.title) { [weak self] title in
         self?.title = title
     }
   }
 
   public var rAlternateTitle: Property<String> {
-    return rAssociatedPropertyForValueForKey("alternateTitle", initial: self.alternateTitle) { [weak self] alternateTitle in
+    return rAssociatedPropertyForValueFor(key: "alternateTitle", initial: self.alternateTitle) { [weak self] alternateTitle in
       self?.alternateTitle = alternateTitle
     }
   }
   
   public var rState: Property<Int> {
-    return rAssociatedPropertyForValueForKey("state")
+    return rAssociatedPropertyForValueFor(key: "state")
   }
 }

@@ -38,8 +38,8 @@ import Cocoa
     control.action = #selector(eventHandler)
   }
 
-  func eventHandler(sender: NSControl?) {
-    pushStream.next(sender!.objectValue)
+  func eventHandler(_ sender: NSControl?) {
+    pushStream.next(sender!.objectValue as AnyObject?)
   }
 
   deinit {
@@ -55,8 +55,8 @@ extension NSControl {
     static var ControlHelperKey = "r_ControlHelperKey"
   }
 
-  public var rControlEvent: Stream<AnyObject?> {
-    if let controlHelper: AnyObject = objc_getAssociatedObject(self, &AssociatedKeys.ControlHelperKey) {
+  public var rControlEvent: ReactiveKit.Stream<AnyObject?> {
+    if let controlHelper = objc_getAssociatedObject(self, &AssociatedKeys.ControlHelperKey) as AnyObject? {
       return (controlHelper as! RKNSControlHelper).pushStream.toStream()
     } else {
       let controlHelper = RKNSControlHelper(control: self)
@@ -66,30 +66,30 @@ extension NSControl {
   }
   
   public var rEnabled: Property<Bool> {
-    return rAssociatedPropertyForValueForKey("enabled")
+    return rAssociatedPropertyForValueFor(key: "enabled")
   }
 
   public var rObjectValue: Property<AnyObject?> {
-    return rAssociatedPropertyForValueForKey("objectValue")
+    return rAssociatedPropertyForValueFor(key: "objectValue")
   }
 
   public var rStringleValue: Property<String> {
-    return rAssociatedPropertyForValueForKey("stringValue")
+    return rAssociatedPropertyForValueFor(key: "stringValue")
   }
 
   public var rAttributedStringleValue: Property<NSAttributedString> {
-    return rAssociatedPropertyForValueForKey("attributedStringValue")
+    return rAssociatedPropertyForValueFor(key: "attributedStringValue")
   }
 
   public var rIntegerValue: Property<Int> {
-    return rAssociatedPropertyForValueForKey("integerValue")
+    return rAssociatedPropertyForValueFor(key: "integerValue")
   }
 
   public var rFloatValue: Property<Float> {
-    return rAssociatedPropertyForValueForKey("floatValue")
+    return rAssociatedPropertyForValueFor(key: "floatValue")
   }
 
   public var rDoubleValue: Property<Double> {
-    return rAssociatedPropertyForValueForKey("doubleValue")
+    return rAssociatedPropertyForValueFor(key: "doubleValue")
   }
 }

@@ -26,15 +26,16 @@ import ReactiveKit
 import Cocoa
 
 extension NSProgressIndicator {
-  
+
   public var rProgress: Property<Float> {
-    return rAssociatedPropertyForValueForKey("progress")
+    return rAssociatedPropertyForValueFor(key: "progress")
   }
 }
 
 extension NSProgressIndicator: BindableType {
 
-  public func observer(disconnectDisposable: Disposable) -> (StreamEvent<Float> -> ()) {
-    return self.rProgress.observer(disconnectDisposable)
+  public func observer(disconnectDisposable: Disposable) -> ((StreamEvent<Float>) -> ()) {
+    return self.rProgress.observer(disconnectDisposable: disconnectDisposable)
   }
+
 }
