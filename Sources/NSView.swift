@@ -34,4 +34,5 @@ extension NSView {
   public var rHidden: Property<Bool> {
     return rAssociatedPropertyForValueFor(key: "hidden")
   }
+  
 }

@@ -30,6 +30,7 @@ extension NSProgressIndicator {
   public var rProgress: Property<Float> {
     return rAssociatedPropertyForValueFor(key: "progress")
   }
+
 }
 
 extension NSProgressIndicator: BindableType {

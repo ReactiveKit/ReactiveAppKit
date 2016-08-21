@@ -50,4 +50,5 @@ extension NSSlider {
   public func observer(disconnectDisposable: Disposable) -> ((StreamEvent<Double>) -> ()) {
     return self.rDoubleValue.observer(disconnectDisposable: disconnectDisposable)
   }
+  
 }

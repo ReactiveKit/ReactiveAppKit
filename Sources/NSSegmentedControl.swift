@@ -22,7 +22,6 @@
 //  THE SOFTWARE.
 //
 
-
 import ReactiveKit
 import Cocoa
 
@@ -35,6 +34,7 @@ extension NSSegmentedControl {
   public var rSelectedSegment: Property<Int> {
     return rAssociatedPropertyForValueFor(key: "selectedSegment")
   }
+  
 }
 
 extension NSSegmentedControl {
@@ -42,4 +42,5 @@ extension NSSegmentedControl {
   public func observer(disconnectDisposable: Disposable) -> ((StreamEvent<Int>) -> ()) {
     return self.rSelectedSegment.observer(disconnectDisposable: disconnectDisposable)
   }
+
 }
